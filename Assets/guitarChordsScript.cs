@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Linq;
 using UnityEngine;
 using guitarChords;
@@ -1103,5 +1104,37 @@ public class guitarChordsScript : MonoBehaviour
             capoTarget = 9;
         }
         Debug.LogFormat("[Guitar Chords #{0}] The level 3 chord is {1} in capo position {2}.", moduleId, level3Target, capoTarget);
+    }
+
+    private string TwitchHelpMessage = "Submit a chord using '!{0} play 4,3,-,4,3,3'. You may also toggle all strings using '!{0} toggle -,0,0,0,-,1'. Each string requires an input, but you may skip strings by inputting a '-' or space in its slot.";
+
+    private IEnumerator ProcessTwitchCommand(string twitchCommand)
+    {
+        var command = twitchCommand.ToLowerInvariant();
+        var match = Regex.Match(command, "^(?:play|toggle) ([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|)$");
+        if (!match.Success) yield break;
+        List<KMSelectable> selectables = new List<KMSelectable>();
+        while (frets.Select(x => x.fretStatus).Contains(true))
+        {
+            yield return null;
+            yield return new KMSelectable[] { frets.First(x => x.fretStatus).fretSelectables };
+        }
+        Debug.LogFormat("Test");
+        for (int i = 1; i < match.Groups.Count; i++)
+        {
+            var fret = match.Groups[i];
+            int result = 0;
+            if (!int.TryParse(fret.Value, out result)) continue;
+            else if (result < 0 || result > 12)
+            {
+                yield return "sendtochaterror Selected capo is invalid. Please select a capo between 0 and 12.";
+                yield break;
+            }
+            selectables.Add(frets[(6 - i) + result * 6].fretSelectables);
+        }
+        yield return null;
+        Debug.LogFormat(match.Groups[0].Value);
+        if (match.Groups[0].Value.StartsWith("play")) yield return selectables.Concat(new[] { playBut }).ToArray();
+        else yield return selectables.ToArray();
     }
 }
