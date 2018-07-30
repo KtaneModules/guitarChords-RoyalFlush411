@@ -1111,7 +1111,7 @@ public class guitarChordsScript : MonoBehaviour
     private IEnumerator ProcessTwitchCommand(string twitchCommand)
     {
         var command = twitchCommand.ToLowerInvariant();
-        var match = Regex.Match(command, "^(?:play|toggle) ([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|)$");
+        var match = Regex.Match(command, "^(?:play|submit|toggle) ([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|)$");
         if (!match.Success) yield break;
         List<KMSelectable> selectables = new List<KMSelectable>();
         while (frets.Select(x => x.fretStatus).Contains(true))
@@ -1133,8 +1133,8 @@ public class guitarChordsScript : MonoBehaviour
             selectables.Add(frets[(6 - i) + result * 6].fretSelectables);
         }
         yield return null;
-        Debug.LogFormat(match.Groups[0].Value);
-        if (match.Groups[0].Value.StartsWith("play")) yield return selectables.Concat(new[] { playBut }).ToArray();
+        var play = match.Groups[0].Value;
+        if (play.StartsWith("play") || play.StartsWith("submit")) yield return selectables.Concat(new[] { playBut }).ToArray();
         else yield return selectables.ToArray();
     }
 }
