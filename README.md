@@ -1,1 +1,1 @@
-guitarChords
+Guitar Chords (GitHub)
