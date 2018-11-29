@@ -587,7 +587,7 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Bbm"; programmedCapo = 7;
         }
-        else if (IsCorrect(new int[] { 10+42, 14+18, 15+42, 23+42 }))
+        else if (IsCorrect(new int[] { 10+42, 14+42, 15+42, 23+42 }))
         {
             programmedChord = "Bbm7"; programmedCapo = 7;
         }
@@ -752,7 +752,7 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Bbm"; programmedCapo = 9;
         }
-        else if (IsCorrect(new int[] { 10+54, 14+18, 15+54, 23+54 }))
+        else if (IsCorrect(new int[] { 10+54, 14+54, 15+54, 23+54 }))
         {
             programmedChord = "Bbm7"; programmedCapo = 9;
         }
