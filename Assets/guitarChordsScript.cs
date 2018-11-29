@@ -421,7 +421,7 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Bbm"; programmedCapo = 5;
         }
-        else if (IsCorrect(new int[] { 10+30, 14+18, 15+30, 23+30 }))
+        else if (IsCorrect(new int[] { 10+30, 14+30, 15+30, 23+30 }))
         {
             programmedChord = "Bbm7"; programmedCapo = 5;
         }
@@ -1106,20 +1106,19 @@ public class guitarChordsScript : MonoBehaviour
         Debug.LogFormat("[Guitar Chords #{0}] The level 3 chord is {1} in capo position {2}.", moduleId, level3Target, capoTarget);
     }
 
-    private string TwitchHelpMessage = "Submit a chord using '!{0} play 4,3,-,4,3,3'. You may also toggle all strings using '!{0} toggle -,0,0,0,-,1'. Each string requires an input, but you may skip strings by inputting a '-' or space in its slot.";
+    private string TwitchHelpMessage = "Submit a chord from bottom string to top using '!{0} play 4,3,-,4,3,3'. You may also toggle all strings using '!{0} toggle -,0,0,0,-,1'. Each string requires an input, but you may skip strings by inputting a '-' or space in its slot.";
 
     private IEnumerator ProcessTwitchCommand(string twitchCommand)
     {
-        var command = twitchCommand.ToLowerInvariant();
-        var match = Regex.Match(command, "^(?:play|submit|toggle) ([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|),([- 0-9]+|)$");
-        if (!match.Success) yield break;
+        string command = twitchCommand.ToLowerInvariant();
+        Match match = Regex.Match(command, @"^(?:play|submit|toggle) ([- ]|\d{1,2}),([- ]|\d{1,2}),([- ]|\d{1,2}),([- ]|\d{1,2}),([- ]|\d{1,2}),([- ]|\d{1,2})$");
+        if (!match.Success && !Regex.Match(command, "^(play|submit)$").Success) yield break;
         List<KMSelectable> selectables = new List<KMSelectable>();
-        while (frets.Select(x => x.fretStatus).Contains(true))
+        while (frets.Select(x => x.fretStatus).Contains(true) && match.Success)
         {
             yield return null;
             yield return new KMSelectable[] { frets.First(x => x.fretStatus).fretSelectables };
         }
-        Debug.LogFormat("Test");
         for (int i = 1; i < match.Groups.Count; i++)
         {
             var fret = match.Groups[i];
@@ -1130,11 +1129,10 @@ public class guitarChordsScript : MonoBehaviour
                 yield return "sendtochaterror Selected capo is invalid. Please select a capo between 0 and 12.";
                 yield break;
             }
-            selectables.Add(frets[(6 - i) + result * 6].fretSelectables);
+            selectables.Add(frets[6 - i + result * 6].fretSelectables);
         }
         yield return null;
-        var play = match.Groups[0].Value;
-        if (play.StartsWith("play") || play.StartsWith("submit")) yield return selectables.Concat(new[] { playBut }).ToArray();
-        else yield return selectables.ToArray();
+        if (Regex.Match(command, "^(play|submit)").Success) selectables.Add(playBut);
+        yield return selectables.ToArray();
     }
 }
