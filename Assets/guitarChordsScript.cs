@@ -105,10 +105,10 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "B7"; programmedCapo = 0;
         }
-        else if (IsCorrect(new int[] { 1, 3, 5, 10, 14 }))
+        /*/else if (IsCorrect(new int[] { 1, 3, 5, 10, 14 }))
         {
             programmedChord = "Bm7"; programmedCapo = 0;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 4, 8, 12, 13 }))
         {
             programmedChord = "C"; programmedCapo = 0;
@@ -161,14 +161,14 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Eb7"; programmedCapo = 0;
         }
-        else if (IsCorrect(new int[] { 2, 10, 11, 15 }))
+        /*/else if (IsCorrect(new int[] { 2, 10, 11, 15 }))
         {
             programmedChord = "Ebm7"; programmedCapo = 0;
         }
         else if (IsCorrect(new int[] { 3, 7, 8 }))
         {
             programmedChord = "E"; programmedCapo = 0;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 7, 8 }))
         {
             programmedChord = "Em"; programmedCapo = 0;
@@ -271,10 +271,10 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "B7"; programmedCapo = 3;
         }
-        else if (IsCorrect(new int[] { 1+18, 3+18, 5+18, 10+18, 14+18 }))
+        /*/else if (IsCorrect(new int[] { 1+18, 3+18, 5+18, 10+18, 14+18 }))
         {
             programmedChord = "Bm7"; programmedCapo = 3;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 4+18, 8+18, 12+18, 13+18 }))
         {
             programmedChord = "C"; programmedCapo = 3;
@@ -327,14 +327,14 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Eb7"; programmedCapo = 3;
         }
-        else if (IsCorrect(new int[] { 2+18, 10+18, 11+18, 15+18 }))
+        /*/else if (IsCorrect(new int[] { 2+18, 10+18, 11+18, 15+18 }))
         {
             programmedChord = "Ebm7"; programmedCapo = 3;
         }
         else if (IsCorrect(new int[] { 3+18, 7+18, 8+18 }))
         {
             programmedChord = "E"; programmedCapo = 3;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 7+18, 8+18 }))
         {
             programmedChord = "Em"; programmedCapo = 3;
@@ -437,10 +437,10 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "B7"; programmedCapo = 5;
         }
-        else if (IsCorrect(new int[] { 1+30, 3+30, 5+30, 10+30, 14+30 }))
+        /*/else if (IsCorrect(new int[] { 1+30, 3+30, 5+30, 10+30, 14+30 }))
         {
             programmedChord = "Bm7"; programmedCapo = 5;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 4+30, 8+30, 12+30, 13+30 }))
         {
             programmedChord = "C"; programmedCapo = 5;
@@ -493,14 +493,14 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Eb7"; programmedCapo = 5;
         }
-        else if (IsCorrect(new int[] { 2+30, 10+30, 11+30, 15+30 }))
+        /*/else if (IsCorrect(new int[] { 2+30, 10+30, 11+30, 15+30 }))
         {
             programmedChord = "Ebm7"; programmedCapo = 5;
         }
         else if (IsCorrect(new int[] { 3+30, 7+30, 8+30 }))
         {
             programmedChord = "E"; programmedCapo = 5;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 7+30, 8+30 }))
         {
             programmedChord = "Em"; programmedCapo = 5;
@@ -603,10 +603,10 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "B7"; programmedCapo = 7;
         }
-        else if (IsCorrect(new int[] { 1+42, 3+42, 5+42, 10+42, 14+42 }))
+        /*/else if (IsCorrect(new int[] { 1+42, 3+42, 5+42, 10+42, 14+42 }))
         {
             programmedChord = "Bm7"; programmedCapo = 7;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 4+42, 8+42, 12+42, 13+42 }))
         {
             programmedChord = "C"; programmedCapo = 7;
@@ -659,14 +659,14 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Eb7"; programmedCapo = 7;
         }
-        else if (IsCorrect(new int[] { 2+42, 10+42, 11+42, 15+42 }))
+        /*/else if (IsCorrect(new int[] { 2+42, 10+42, 11+42, 15+42 }))
         {
             programmedChord = "Ebm7"; programmedCapo = 7;
         }
         else if (IsCorrect(new int[] { 3+42, 7+42, 8+42 }))
         {
             programmedChord = "E"; programmedCapo = 7;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 7+42, 8+42 }))
         {
             programmedChord = "Em"; programmedCapo = 7;
@@ -768,10 +768,10 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "B7"; programmedCapo = 9;
         }
-        else if (IsCorrect(new int[] { 1+54, 3+54, 5+54, 10+54, 14+54 }))
+        /*/else if (IsCorrect(new int[] { 1+54, 3+54, 5+54, 10+54, 14+54 }))
         {
             programmedChord = "Bm7"; programmedCapo = 9;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 4+54, 8+54, 12+54, 13+54 }))
         {
             programmedChord = "C"; programmedCapo = 9;
@@ -824,14 +824,14 @@ public class guitarChordsScript : MonoBehaviour
         {
             programmedChord = "Eb7"; programmedCapo = 9;
         }
-        else if (IsCorrect(new int[] { 2+54, 10+54, 11+54, 15+54 }))
+        /*/else if (IsCorrect(new int[] { 2+54, 10+54, 11+54, 15+54 }))
         {
             programmedChord = "Ebm7"; programmedCapo = 9;
         }
         else if (IsCorrect(new int[] { 3+54, 7+54, 8+54 }))
         {
             programmedChord = "E"; programmedCapo = 9;
-        }
+        }/*/
         else if (IsCorrect(new int[] { 7+54, 8+54 }))
         {
             programmedChord = "Em"; programmedCapo = 9;
@@ -962,24 +962,24 @@ public class guitarChordsScript : MonoBehaviour
             GetComponent<KMBombModule>().HandleStrike();
             Audio.PlaySoundAtTransform(chords[3].name, transform);
             Debug.LogFormat("[Guitar Chords #{0}] Strike! You played {1} in capo position {2}. I was expecting {3} in capo position {4}.", moduleId, programmedChord, programmedCapo, level1Target, capoTarget);
-            stage = 1;
-            Start();
+            //stage = 1;
+            //Start();
         }
         else if (stage == 2)
         {
             GetComponent<KMBombModule>().HandleStrike();
             Audio.PlaySoundAtTransform(chords[3].name, transform);
             Debug.LogFormat("[Guitar Chords #{0}] Strike! You played {1} in capo position {2}. I was expecting {3} in capo position {4}.", moduleId, programmedChord, programmedCapo, level2Target, capoTarget);
-            stage = 1;
-            Start();
+            //stage = 1;
+            //Start();
         }
         else if (stage == 3)
         {
             GetComponent<KMBombModule>().HandleStrike();
             Audio.PlaySoundAtTransform(chords[3].name, transform);
             Debug.LogFormat("[Guitar Chords #{0}] Strike! You played {1} in capo position {2}. I was expecting {3} in capo position {4}.", moduleId, programmedChord, programmedCapo, level3Target, capoTarget);
-            stage = 1;
-            Start();
+            //stage = 1;
+            //Start();
         }
     }
 
@@ -988,7 +988,7 @@ public class guitarChordsScript : MonoBehaviour
         cycle = 0;
         while (cycle < 20)
         {
-            int index = UnityEngine.Random.Range(0,41);
+            int index = UnityEngine.Random.Range(0,37);
             yield return new WaitForSeconds(0.1f);
             Audio.PlaySoundAtTransform(chords[4].name, transform);
             level1Chord.text = chordOptions[index];
@@ -1029,7 +1029,7 @@ public class guitarChordsScript : MonoBehaviour
         cycle = 0;
         while (cycle < 20 || level2Chord.text == level1Target)
         {
-            int index = UnityEngine.Random.Range(0,41);
+            int index = UnityEngine.Random.Range(0,37);
             yield return new WaitForSeconds(0.1f);
             Audio.PlaySoundAtTransform(chords[4].name, transform);
             level2Chord.text = chordOptions[index];
@@ -1070,7 +1070,7 @@ public class guitarChordsScript : MonoBehaviour
         cycle = 0;
         while (cycle < 20 || level3Chord.text == level1Target || level3Chord.text == level2Target)
         {
-            int index = UnityEngine.Random.Range(0,41);
+            int index = UnityEngine.Random.Range(0,37);
             yield return new WaitForSeconds(0.1f);
             Audio.PlaySoundAtTransform(chords[4].name, transform);
             level3Chord.text = chordOptions[index];
