@@ -51,7 +51,7 @@ public class guitarChordsScript : MonoBehaviour
         return true;
     }
 
-    void Update()
+    void CheckCorrect()
     {
         if (IsCorrect(new int[] { 0, 4, 5, 9, 13, 14 }))
         {
@@ -933,6 +933,7 @@ public class guitarChordsScript : MonoBehaviour
         {
             return;
         }
+        CheckCorrect();
         if (stage == 1 && programmedChord == level1Target && programmedCapo == capoTarget)
         {
             stage++;
